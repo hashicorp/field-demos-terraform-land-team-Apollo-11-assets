@@ -1,5 +1,3 @@
-#!bin/bash
-
 for x in hashicups-development-team/hashicups-application hashicups-development-team/hashicups-application-modular network-team/terraform-aws-network-module database-team/terraform-aws-postgres-rds-module server-team/terraform-aws-server-module; do
   IFS='/'
   read -a strarr<<< $x
