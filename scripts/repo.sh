@@ -10,9 +10,9 @@ for x in hashicups-development-team/hashicups-application hashicups-development-
   git tag -a v$((RANDOM % 10)).$((RANDOM % 10)).0 -m "Create Tag"
   git push http://root:$GITLAB_PASSWORD@$GITLAB_PUBLIC_ADDRESS/${strarr[0]}/${strarr[1]}.git
   git push --tags http://root:$GITLAB_PASSWORD@$GITLAB_PUBLIC_ADDRESS/${strarr[0]}/${strarr[1]}.git
-  #git branch stage
-  #git push http://root:$GITLAB_PASSWORD@$GITLAB_PUBLIC_ADDRESS/${strarr[0]}/${strarr[1]}.git stage
-  #git branch development
-  #sgit push http://root:$GITLAB_PASSWORD@$GITLAB_PUBLIC_ADDRESS/${strarr[0]}/${strarr[1]}.git development
+  git branch stage
+  git push http://root:$GITLAB_PASSWORD@$GITLAB_PUBLIC_ADDRESS/${strarr[0]}/${strarr[1]}.git stage
+  git branch development
+  sgit push http://root:$GITLAB_PASSWORD@$GITLAB_PUBLIC_ADDRESS/${strarr[0]}/${strarr[1]}.git development
   cd ..
 done
