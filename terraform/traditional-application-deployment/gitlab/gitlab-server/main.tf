@@ -1,4 +1,4 @@
-//GitLab AWS Instance
+//GitLab AWS Server
 provider "aws" {
   region = "us-east-2"
 }
