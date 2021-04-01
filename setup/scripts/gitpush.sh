@@ -1,5 +1,4 @@
 #!/bin/bash
-
 cd ~/gitclones
 git config --global user.name "root" > /dev/null 2>&1
 git config --global user.email demo@hashicorp.com > /dev/null 2>&1
