@@ -20,7 +20,7 @@ resource "tfe_workspace" "hashicups_prod" {
 
 resource "tfe_workspace" "hashicups_stage" {
   name         = "HashiCups-Stage"
-  organization = "var.TFC_ORGANIZATION
+  organization = var.TFC_ORGANIZATION
   auto_apply = true
   vcs_repo {
     identifier = "hashicups-development-team/hashicups-application"
