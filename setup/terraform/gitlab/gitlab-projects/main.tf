@@ -1,4 +1,8 @@
-//Gitlab Project Configs
+//Gitlab Projects
+provider "gitlab" {
+    base_url = "http://${GITLAB_PUBLIC_ADDRESS}/api/v4"
+}
+
 resource "gitlab_group" "devteam" {
   name        = "HashiCups Development Team"
   path        = "HashiCups-Development-Team"
