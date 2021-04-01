@@ -14,7 +14,7 @@ resource "aws_key_pair" "gitlabkey" {
 
 resource "null_resource" "gitlabkey" {
   provisioner "local-exec" {
-    command = "echo \"\${tls_private_key.gitlabkey.private_key_pem}\" > ~/.ssh/gitlabkey.pem"
+    command = "echo \"${tls_private_key.gitlabkey.private_key_pem}\" > ~/.ssh/gitlabkey.pem"
   }
   provisioner "local-exec" {
     command = "chmod 600 ~/.ssh/gitlabkey.pem"
