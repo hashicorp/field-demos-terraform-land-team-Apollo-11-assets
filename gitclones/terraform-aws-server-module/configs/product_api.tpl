@@ -1,12 +1,15 @@
 #!/bin/bash
 
-#Docker
-echo "Installing Docker"
-sudo yum install -y yum-utils device-mapper-persistent-data lvm2
-sudo yum-config-manager -y --add-repo https://download.docker.com/linux/centos/docker-ce.repo
-sudo yum install -y --setopt=obsoletes=0 docker-ce-17.03.2.ce-1.el7.centos.x86_64 docker-ce-selinux-17.03.2.ce-1.el7.centos.noarch
+#docker
+sudo apt install -y apt-transport-https ca-certificates curl software-properties-common gnupg
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+sudo apt update
+sudo apt install -y docker-ce
+sudo usermod -aG docker $USER
 sudo systemctl enable docker
-sudo systemctl start docker
+sudo curl -L "https://github.com/docker/compose/releases/download/1.24.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
 
 #creds
 sudo mkdir -p /etc/secrets
@@ -19,9 +22,6 @@ sudo bash -c 'cat <<-EOF > /etc/secrets/db-creds
 EOF'
 
 #app
-sudo curl -L "https://github.com/docker/compose/releases/download/1.24.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-sudo chmod +x /usr/local/bin/docker-compose
-
 sudo bash -c 'cat <<-EOF > /docker-compose.yml
 version: "3"
 services:
@@ -34,6 +34,4 @@ services:
        - /etc/secrets/db-creds:/etc/secrets/db-creds
 EOF'
 
-#Waiting for Postgres to come up
-sleep 120
 sudo /usr/local/bin/docker-compose up -d

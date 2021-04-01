@@ -27,7 +27,7 @@ data "template_file" "config" {
 }
 
 resource "aws_instance" "instance" {
-  instance_type               = "t2.micro"
+  instance_type               = "t2.small"
   ami                         = data.aws_ami.ubuntu.id
   vpc_security_group_ids      = [ var.security_group_id ]
   subnet_id                   = var.vpc_subnet_ids

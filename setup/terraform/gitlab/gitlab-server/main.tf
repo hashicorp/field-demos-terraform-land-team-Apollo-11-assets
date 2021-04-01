@@ -1,4 +1,4 @@
-//GitLab AWS 
+//GitLab AWS
 provider "aws" {
   region = "us-east-2"
 }
@@ -76,7 +76,7 @@ resource "aws_security_group" "http" {
 }
 resource "aws_instance" "gitlab" {
   ami           = "ami-0a83c62232ebb66ea" #~13.9.4 Gitlab CE
-  instance_type = "t2.large"
+  instance_type = "t2.medium"
   associate_public_ip_address = true
   vpc_security_group_ids = [aws_security_group.http.id]
   subnet_id = aws_subnet.gitlab.id
