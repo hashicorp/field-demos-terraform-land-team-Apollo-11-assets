@@ -1,6 +1,6 @@
 //Gitlab Projects
 provider "gitlab" {
-    base_url = "http://${GITLAB_PUBLIC_ADDRESS}/api/v4"
+    base_url = "http://${var.GITLAB_PUBLIC_ADDRESS}/api/v4"
 }
 
 resource "gitlab_group" "devteam" {
