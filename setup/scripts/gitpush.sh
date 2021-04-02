@@ -5,7 +5,7 @@ git config --global user.email demo@hashicorp.com > /dev/null 2>&1
 
 cat ~/gitclones/hashicups-application-module/main.tf | grep UPDATEME > /dev/null 2>&1
 if [ "$?" == 0 ] ; then
-  sed -i -e 's/UPDATEME/$GITLAB_PUBLIC_ADDRESS/g' ~/gitclones/hashicups-application-module/main.tf
+  sed -i -e "s/UPDATEME/${GITLAB_PUBLIC_ADDRESS}/g" ~/gitclones/hashicups-application-module/main.tf
   cd ~/gitclones/hashicups-application-module/
   git config --global user.name "root" > /dev/null 2>&1
   git config --global user.email demo@hashicorp.com > /dev/null 2>&1
