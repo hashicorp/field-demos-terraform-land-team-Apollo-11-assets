@@ -27,7 +27,7 @@ resource "tfe_registry_module" "rds-registry-module" {
 
 //Hashicups-Application-module Workspace
 resource "tfe_workspace" "workspace" {
-  name = "hashicups-application-module"
+  name = "hashicups-module"
   organization = var.TFC_ORGANIZATION
   auto_apply = true
 

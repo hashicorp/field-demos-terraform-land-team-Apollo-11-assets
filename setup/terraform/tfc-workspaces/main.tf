@@ -8,7 +8,7 @@ resource "tfe_oauth_client" "test-oauth-client" {
 }
 
 resource "tfe_workspace" "hashicups_prod" {
-  name         = "HashiCups-Prod"
+  name         = "hashicups-prod"
   organization = var.TFC_ORGANIZATION
   auto_apply = true
   terraform_version = "0.14.9"
@@ -20,7 +20,7 @@ resource "tfe_workspace" "hashicups_prod" {
 }
 
 resource "tfe_workspace" "hashicups_stage" {
-  name         = "HashiCups-Stage"
+  name         = "hashicups-staging"
   organization = var.TFC_ORGANIZATION
   auto_apply = true
   terraform_version = "0.14.9"
@@ -32,7 +32,7 @@ resource "tfe_workspace" "hashicups_stage" {
 }
 
 resource "tfe_workspace" "hashicups_dev" {
-  name         = "HashiCups-Development"
+  name         = "hashicups-dev"
   organization = var.TFC_ORGANIZATION
   auto_apply = true
   terraform_version = "0.14.9"

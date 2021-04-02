@@ -1,6 +1,7 @@
-#!/bin/bash 
+#!/bin/bash
 
 #TFC Organization
+clear
 echo
 echo "Please enter your Terraform Cloud organization name."
 read TFC_ORGANIZATION
