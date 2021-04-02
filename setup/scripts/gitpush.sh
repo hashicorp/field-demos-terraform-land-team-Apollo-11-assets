@@ -3,6 +3,7 @@ cd ~/gitclones
 git config --global user.name "root" > /dev/null 2>&1
 git config --global user.email demo@hashicorp.com > /dev/null 2>&1
 
+# Modify 'hashicup-application-module' with GitLab Public Address
 cat ~/gitclones/hashicups-application-module/main.tf | grep UPDATEME > /dev/null 2>&1
 if [ "$?" == 0 ] ; then
   sed -i -e "s/UPDATEME/${GITLAB_PUBLIC_ADDRESS}/g" ~/gitclones/hashicups-application-module/main.tf
@@ -14,6 +15,7 @@ if [ "$?" == 0 ] ; then
   git push http://root:$GITLAB_PASSWORD@$GITLAB_PUBLIC_ADDRESS/hashicups-development-team/hashicups-application-module > /dev/null 2>&1
 fi
 
+# Push Projects repos
 for x in hashicups-development-team/hashicups-application hashicups-development-team/hashicups-application-module network-team/terraform-aws-network-module database-team/terraform-aws-postgres-rds-module server-team/terraform-aws-server-module; do
   IFS='/'
   read -a strarr<<< $x
@@ -33,3 +35,8 @@ for x in hashicups-development-team/hashicups-application hashicups-development-
   git push http://root:$GITLAB_PASSWORD@$GITLAB_PUBLIC_ADDRESS/${strarr[0]}/${strarr[1]}.git development
   cd ..
 done
+
+# Push Sentinel Repo
+#git remote rename origin upstream > /dev/null 2>&1
+git remote add origin http://root:HashiCorp123@$GITLAB_PUBLIC_ADDRESS/Security-Team/sentinel-policies.git > /dev/null 2>&1
+git push origin master  > /dev/null 2>&1
