@@ -1,4 +1,4 @@
-#!/bin/bash -
+#!/bin/bash 
 
 #TFC Organization
 echo
