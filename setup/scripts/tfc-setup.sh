@@ -15,17 +15,16 @@ echo "TFC Organization : $TFC_ORGANIZATION"
 echo
 echo "TFC Credential : $(cat ~/.terraform.d/credentials.tfrc.json)"
 echo
-read -p "Do these look right to you? Y/n " -n 1 -r
+read -r -p "Please verify this is correct? [Y/n] " REPLY
 echo
 if [[ ! \$REPLY =~ ^[Yy]\$ ]]
 then
-  echo "Please try again...Rerun ~/scripts/tfc.sh"
+  echo "Please try again...Reruning ~/setup/scripts/tfc-setup.sh"
   exit 1
-else
-  export TFC_ORGANIZATION=$TFC_ORGANIZATION
-  export TF_VAR_ORGANIZATION=$TFC_ORGANIZATION
-  echo export TFC_ORGANIZATION=$TFC_ORGANIZATION >> ~/.bashrc
-  echo export TF_VAR_TFC_ORGANIZATION=$TFC_ORGANIZATION >> ~/.bashrc
-  echo export TERRAFORM_CONFIG=/root/.terraform.d/credentials.tfrc.json >> ~/.bashrc
-  echo "Success: TFC organization name and token updated."
 fi
+export TFC_ORGANIZATION=$TFC_ORGANIZATION
+export TF_VAR_ORGANIZATION=$TFC_ORGANIZATION
+echo export TFC_ORGANIZATION=$TFC_ORGANIZATION >> ~/.bashrc
+echo export TF_VAR_TFC_ORGANIZATION=$TFC_ORGANIZATION >> ~/.bashrc
+echo export TERRAFORM_CONFIG=/root/.terraform.d/credentials.tfrc.json >> ~/.bashrc
+echo "Success: TFC organization name and token updated."
