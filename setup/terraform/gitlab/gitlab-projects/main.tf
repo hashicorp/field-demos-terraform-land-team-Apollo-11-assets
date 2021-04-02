@@ -16,7 +16,7 @@ resource "gitlab_project" "app" {
 }
 
 resource "gitlab_project" "modapp" {
-  name         = "HashiCups Application Modular"
+  name         = "HashiCups Application Module"
   namespace_id = gitlab_group.devteam.id
   visibility_level = "public"
 }

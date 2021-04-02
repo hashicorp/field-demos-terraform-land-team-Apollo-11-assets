@@ -25,14 +25,14 @@ resource "tfe_registry_module" "rds-registry-module" {
   depends_on = [ tfe_registry_module.server-registry-module ]
 }
 
-//Hashicups-Application-Modular Workspace
+//Hashicups-Application-module Workspace
 resource "tfe_workspace" "workspace" {
-  name = "hashicups-application-modular"
+  name = "hashicups-application-module"
   organization = var.TFC_ORGANIZATION
   auto_apply = true
 
   vcs_repo {
-    identifier = "hashicups-development-team/hashicups-application-modular"
+    identifier = "hashicups-development-team/hashicups-application-module"
     oauth_token_id = var.OAUTH_TOKEN_ID
   }
 }
