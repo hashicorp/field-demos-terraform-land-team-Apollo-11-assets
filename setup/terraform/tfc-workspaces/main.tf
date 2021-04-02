@@ -10,7 +10,7 @@ resource "tfe_oauth_client" "test-oauth-client" {
 resource "tfe_workspace" "hashicups_prod" {
   name         = "hashicups-prod"
   organization = var.TFC_ORGANIZATION
-  auto_apply = true
+  auto_apply = false
   terraform_version = "0.14.9"
   vcs_repo {
     identifier = "hashicups-development-team/hashicups-application"
@@ -22,7 +22,7 @@ resource "tfe_workspace" "hashicups_prod" {
 resource "tfe_workspace" "hashicups_stage" {
   name         = "hashicups-staging"
   organization = var.TFC_ORGANIZATION
-  auto_apply = true
+  auto_apply = false
   terraform_version = "0.14.9"
   vcs_repo {
     identifier = "hashicups-development-team/hashicups-application"

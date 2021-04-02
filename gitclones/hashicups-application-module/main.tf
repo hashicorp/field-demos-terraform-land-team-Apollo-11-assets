@@ -5,7 +5,7 @@ provider "aws" {
 module "frontend" {
   source = "git::http://UPDATEME/server-team/terraform-aws-server-module.git"
   name              = "frontend"
-  tags              = { Owner = "jdoe@hashicorp.com", CostCenter = "12345", Environment = "${var.environment}" }
+  tags              = { Owner = "jdoe@hashicorp.com", CostCenter = "12345", Environment = var.environment }
   vpc_id            = module.network.vpc_id
   vpc_subnet_ids    = module.network.public_subnets[0]
   security_group_id = module.network.security_group_id
@@ -18,7 +18,7 @@ module "frontend" {
 module "public_api" {
   source = "git::http://UPDATEME/server-team/terraform-aws-server-module.git"
   name              = "public_api"
-  tags              = { Owner = "jdoe@hashicorp.com", CostCenter = "12345", Environment = "${var.environment}" }
+  tags              = { Owner = "jdoe@hashicorp.com", CostCenter = "12345", Environment = var.environment }
   vpc_id            = module.network.vpc_id
   vpc_subnet_ids    = module.network.public_subnets[0]
   security_group_id = module.network.security_group_id
@@ -31,7 +31,7 @@ module "public_api" {
 module "product_api" {
   source = "git::http://UPDATEME/server-team/terraform-aws-server-module.git"
   name              = "product_api"
-  tags              = { Owner = "jdoe@hashicorp.com", CostCenter = "12345", Environment = "${var.environment}" }
+  tags              = { Owner = "jdoe@hashicorp.com", CostCenter = "12345", Environment = var.environment }
   vpc_id            = module.network.vpc_id
   vpc_subnet_ids    = module.network.public_subnets[0]
   security_group_id = module.network.security_group_id
@@ -44,7 +44,7 @@ module "product_api" {
 module "postgres" {
   source = "git::http://UPDATEME/server-team/terraform-aws-server-module.git"
   name              = "postgres"
-  tags              = { Owner = "jdoe@hashicorp.com", CostCenter = "12345", Environment = "${var.environment}" }
+  tags              = { Owner = "jdoe@hashicorp.com", CostCenter = "12345", Environment = var.environment }
   vpc_id            = module.network.vpc_id
   vpc_subnet_ids    = module.network.public_subnets[0]
   security_group_id = module.network.security_group_id

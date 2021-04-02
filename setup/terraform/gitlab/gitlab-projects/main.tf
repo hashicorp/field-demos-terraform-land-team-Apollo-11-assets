@@ -3,6 +3,7 @@ provider "gitlab" {
     base_url = "http://${var.GITLAB_PUBLIC_ADDRESS}/api/v4"
 }
 
+//Dev
 resource "gitlab_group" "devteam" {
   name        = "HashiCups Development Team"
   path        = "HashiCups-Development-Team"
@@ -21,6 +22,7 @@ resource "gitlab_project" "modapp" {
   visibility_level = "public"
 }
 
+//DB
 resource "gitlab_group" "datateam" {
   name        = "Database Team"
   path        = "Database-Team"
@@ -34,6 +36,7 @@ resource "gitlab_project" "data" {
   tags = [tostring(1.1)]
 }
 
+//Server
 resource "gitlab_group" "serverteam" {
   name        = "Server Team"
   path        = "Server-Team"
@@ -47,6 +50,7 @@ resource "gitlab_project" "server" {
   tags = [tostring(2.4)]
 }
 
+//Network
 resource "gitlab_group" "netteam" {
   name        = "Network Team"
   path        = "Network-Team"
@@ -58,4 +62,18 @@ resource "gitlab_project" "network" {
   namespace_id = gitlab_group.netteam.id
   visibility_level = "public"
   tags = [tostring(1.6)]
+}
+
+//Sentinel
+resource "gitlab_group" "sentinel" {
+  name        = "Security Team"
+  path        = "Security-Team"
+  visibility_level = "public"
+  description = "Group to manage Sentinel Policies"
+}
+
+resource "gitlab_project" "sentinel" {
+  name         = "Sentinel Policies"
+  visibility_level = "public"
+  namespace_id = gitlab_group.sentinel.id
 }
