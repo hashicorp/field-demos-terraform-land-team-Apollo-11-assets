@@ -17,13 +17,11 @@ echo "TFC Credential : $(cat ~/.terraform.d/credentials.tfrc.json)"
 echo
 read -r -p "Please verify this is correct? [Y/n] " REPLY
 echo
-if [[ ! \$REPLY =~ ^[Yy]\$ ]]
+if [[ ! $REPLY =~ ^[Yy]$ ]]
 then
   echo "Please try again...Reruning ~/setup/scripts/tfc-setup.sh"
   exit 1
 fi
-export TFC_ORGANIZATION=$TFC_ORGANIZATION
-export TF_VAR_ORGANIZATION=$TFC_ORGANIZATION
 echo export TFC_ORGANIZATION=$TFC_ORGANIZATION >> ~/.bashrc
 echo export TF_VAR_TFC_ORGANIZATION=$TFC_ORGANIZATION >> ~/.bashrc
 echo export TERRAFORM_CONFIG=/root/.terraform.d/credentials.tfrc.json >> ~/.bashrc
