@@ -11,6 +11,7 @@ resource "tfe_workspace" "hashicups_prod" {
   name         = "HashiCups-Prod"
   organization = var.TFC_ORGANIZATION
   auto_apply = true
+  terraform_version = "0.14.9"
   vcs_repo {
     identifier = "hashicups-development-team/hashicups-application"
     branch = "master"
@@ -22,6 +23,7 @@ resource "tfe_workspace" "hashicups_stage" {
   name         = "HashiCups-Stage"
   organization = var.TFC_ORGANIZATION
   auto_apply = true
+  terraform_version = "0.14.9"
   vcs_repo {
     identifier = "hashicups-development-team/hashicups-application"
     branch = "stage"
@@ -33,6 +35,7 @@ resource "tfe_workspace" "hashicups_dev" {
   name         = "HashiCups-Development"
   organization = var.TFC_ORGANIZATION
   auto_apply = true
+  terraform_version = "0.14.9"
   vcs_repo {
     identifier = "HashiCups-Development-Team/hashicups-application"
     branch = "development"
