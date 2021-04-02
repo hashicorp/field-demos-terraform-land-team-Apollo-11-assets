@@ -37,7 +37,7 @@ resource "tfe_workspace" "hashicups_dev" {
   auto_apply = true
   terraform_version = "0.14.9"
   vcs_repo {
-    identifier = "HashiCups-Development-Team/hashicups-application"
+    identifier = "hashicups-development-team/hashicups-application"
     branch = "development"
     oauth_token_id     = tfe_oauth_client.test-oauth-client.oauth_token_id
   }
