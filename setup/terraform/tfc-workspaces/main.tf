@@ -1,4 +1,4 @@
-//TFC VCS and Workspaces
+//TFC VCS
 resource "tfe_oauth_client" "test-oauth-client" {
    organization = var.TFC_ORGANIZATION
    api_url          = "http://${var.GITLAB_PUBLIC_ADDRESS}/api/v4"
@@ -7,6 +7,7 @@ resource "tfe_oauth_client" "test-oauth-client" {
    service_provider = "gitlab_community_edition"
 }
 
+//TFC Workspaces
 resource "tfe_workspace" "hashicups_prod" {
   name         = "hashicups-prod"
   organization = var.TFC_ORGANIZATION
