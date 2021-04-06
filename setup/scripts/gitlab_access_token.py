@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+# Script modified from the original creator:
+# Author: https://github.com/vitalyisaev2
+# Repo: https://github.com/vitalyisaev2/gitlab_token
 """
 Script that creates Personal Access Token for Gitlab API;
 Tested with:
