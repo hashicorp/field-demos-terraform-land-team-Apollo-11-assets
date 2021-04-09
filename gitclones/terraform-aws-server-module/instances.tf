@@ -22,7 +22,7 @@ data "aws_ami" "ubuntu" {
 data "template_file" "config" {
   template = file("${path.module}/configs/${var.name}.tpl")
   vars = {
-    upstream_ip = "${var.upstream_ip}"
+    upstream_ip = var.upstream_ip
   }
 }
 
