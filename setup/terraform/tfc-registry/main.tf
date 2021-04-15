@@ -29,7 +29,7 @@ resource "tfe_registry_module" "rds-registry-module" {
 resource "tfe_workspace" "workspace" {
   name = "hashicups-module"
   organization = var.TFC_ORGANIZATION
-  auto_apply = true
+  auto_apply = false
 
   vcs_repo {
     identifier = "hashicups-development-team/hashicups-application-module"
