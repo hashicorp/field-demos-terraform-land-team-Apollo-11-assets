@@ -35,6 +35,8 @@ resource "tfe_workspace" "workspace" {
     identifier = "hashicups-development-team/hashicups-application-module"
     oauth_token_id = var.OAUTH_TOKEN_ID
   }
+
+  depends_on = ["tfe_registry_module.rds-registry-module", "tfe_registry_module.server-registry-module"]
 }
 
 resource "tfe_variable" "aws_access_key" {
