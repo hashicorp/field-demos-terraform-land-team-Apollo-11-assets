@@ -30,13 +30,14 @@ resource "tfe_workspace" "workspace" {
   name = "hashicups-module"
   organization = var.TFC_ORGANIZATION
   auto_apply = false
+  terraform_version = "0.14.9"
 
   vcs_repo {
     identifier = "hashicups-development-team/hashicups-application-module"
     oauth_token_id = var.OAUTH_TOKEN_ID
   }
 
-  depends_on = ["tfe_registry_module.rds-registry-module", "tfe_registry_module.server-registry-module"]
+  depends_on = [ tfe_registry_module.rds-registry-module, tfe_registry_module.server-registry-module ]
 }
 
 resource "tfe_variable" "aws_access_key" {
