@@ -1,8 +1,8 @@
-resource "tfe_policy_set" "awsssh" {
-  name          = "CIS-Benchmarks-4_1-Networking"
-  description   = "CIS Benchmarks 4.1"
+resource "tfe_policy_set" "pmr" {
+  name          = "require-all-resources-from-pmr"
+  description   = "Requires all non-root modules come from the private module registry and prevents creation of resources in the root module"
   organization  = var.TFC_ORGANIZATION
-  policies_path = "/aws/networking/aws-cis-4.1-networking-deny-public-ssh-acl-rules"
+  policies_path = "/cloud-agnostic/pmr"
   global = true
 
   vcs_repo {
