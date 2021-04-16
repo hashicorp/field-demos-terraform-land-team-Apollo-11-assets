@@ -30,6 +30,7 @@ resource "tfe_workspace" "workspace" {
   name = "hashicups-module"
   organization = var.TFC_ORGANIZATION
   auto_apply = false
+  queue_all_runs = false
   terraform_version = "0.14.9"
 
   vcs_repo {
