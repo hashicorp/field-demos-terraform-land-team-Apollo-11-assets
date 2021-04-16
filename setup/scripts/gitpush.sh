@@ -34,4 +34,5 @@ for x in hashicups-development-team/hashicups-application hashicups-development-
   git branch development
   git push http://root:$GITLAB_PASSWORD@$GITLAB_PUBLIC_ADDRESS/${strarr[0]}/${strarr[1]}.git development
   cd ..
+  sleep 10
 done
