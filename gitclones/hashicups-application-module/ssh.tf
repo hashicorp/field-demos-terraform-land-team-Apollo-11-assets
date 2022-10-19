@@ -13,10 +13,10 @@ resource "tls_private_key" "awskey" {
 
 resource "null_resource" "awskey" {
   provisioner "local-exec" {
-    command = "echo \"${tls_private_key.awskey.private_key_pem}\" > ~/.ssh/awskey-modular.pem"
+    command = "echo \"${tls_private_key.awskey.private_key_pem}\" > ~/awskey-modular.pem"
   }
 
   provisioner "local-exec" {
-    command = "chmod 600 ~/.ssh/awskey-modular.pem"
+    command = "chmod 600 ~/awskey-modular.pem"
   }
 }
