@@ -19,13 +19,6 @@ data "aws_ami" "ubuntu" {
   owners = ["099720109477"] # Canonical
 }
 
-data "template_file" "config" {
-  template = file("${path.module}/configs/${var.name}.tpl")
-  vars = {
-    upstream_ip = var.upstream_ip
-  }
-}
-
 resource "aws_instance" "instance" {
   instance_type               = "t2.small"
   ami                         = data.aws_ami.ubuntu.id
@@ -37,5 +30,5 @@ resource "aws_instance" "instance" {
   private_ip                  = var.private_ip
   tags                        = var.tags
 
-  user_data = data.template_file.config.rendered
+  user_data = templatefile("${path.module}/configs/${var.name}.tpl", { upstream_ip = var.upstream_ip })
 }
