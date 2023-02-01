@@ -1,3 +1,6 @@
+# Copyright (c) HashiCorp, Inc.
+# SPDX-License-Identifier: MPL-2.0
+
 //TFC VCS
 resource "tfe_oauth_client" "test-oauth-client" {
    organization = var.TFC_ORGANIZATION

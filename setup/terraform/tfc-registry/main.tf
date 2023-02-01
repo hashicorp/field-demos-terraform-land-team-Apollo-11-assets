@@ -1,3 +1,6 @@
+# Copyright (c) HashiCorp, Inc.
+# SPDX-License-Identifier: MPL-2.0
+
 //PMR Modules
 resource "tfe_registry_module" "network-registry-module" {
   vcs_repo {

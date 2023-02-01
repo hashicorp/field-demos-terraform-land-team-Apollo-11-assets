@@ -1,4 +1,7 @@
 #!/bin/bash
+# Copyright (c) HashiCorp, Inc.
+# SPDX-License-Identifier: MPL-2.0
+
 cd ~/gitclones
 git config --global user.name "root" > /dev/null 2>&1
 git config --global user.email demo@hashicorp.com > /dev/null 2>&1

@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+# Copyright (c) HashiCorp, Inc.
+# SPDX-License-Identifier: MPL-2.0
+
 # Script modified from the original creator:
 # Author: https://github.com/vitalyisaev2
 # Repo: https://github.com/vitalyisaev2/gitlab_token
