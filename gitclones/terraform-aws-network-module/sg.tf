@@ -1,3 +1,6 @@
+# Copyright (c) HashiCorp, Inc.
+# SPDX-License-Identifier: MPL-2.0
+
 resource "aws_security_group" "security_group" {
   name        = "${var.name}-security-group"
   vpc_id      = module.vpc.vpc_id
