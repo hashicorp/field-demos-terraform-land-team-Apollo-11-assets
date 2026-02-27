@@ -15,7 +15,7 @@ resource "tfe_workspace" "hashicups_prod" {
   queue_all_runs = false
   terraform_version = "0.14.9"
   vcs_repo {
-    identifier = "hashicups-development-team/hashicups-application"
+    identifier = "hashicups-development-team/hashicups-application-module"
     branch = "master"
     oauth_token_id     = tfe_oauth_client.test-oauth-client.oauth_token_id
   }
@@ -28,7 +28,7 @@ resource "tfe_workspace" "hashicups_stage" {
   queue_all_runs = false
   terraform_version = "0.14.9"
   vcs_repo {
-    identifier = "hashicups-development-team/hashicups-application"
+    identifier = "hashicups-development-team/hashicups-application-module"
     branch = "stage"
     oauth_token_id     = tfe_oauth_client.test-oauth-client.oauth_token_id
   }
@@ -41,7 +41,7 @@ resource "tfe_workspace" "hashicups_dev" {
   queue_all_runs = false
   terraform_version = "0.14.9"
   vcs_repo {
-    identifier = "hashicups-development-team/hashicups-application"
+    identifier = "hashicups-development-team/hashicups-application-module"
     branch = "development"
     oauth_token_id     = tfe_oauth_client.test-oauth-client.oauth_token_id
   }
