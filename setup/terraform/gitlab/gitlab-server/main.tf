@@ -1,3 +1,5 @@
+# Copyright IBM Corp. 2021, 2026
+
 //GitLab AWS
 provider "aws" {
   region = "us-east-2"

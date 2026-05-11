@@ -1,3 +1,5 @@
+# Copyright IBM Corp. 2021, 2026
+
 variable "name" {}
 variable "vpc_id" {}
 variable "vpc_cidr" {}

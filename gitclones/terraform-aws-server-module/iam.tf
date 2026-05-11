@@ -1,3 +1,5 @@
+# Copyright IBM Corp. 2021, 2026
+
 resource "random_id" "name" {
   byte_length = 4
 }

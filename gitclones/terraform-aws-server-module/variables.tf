@@ -1,3 +1,5 @@
+# Copyright IBM Corp. 2021, 2026
+
 variable "name" {}
 variable "tags" {}
 variable "vpc_id" {}

@@ -1,3 +1,5 @@
+# Copyright IBM Corp. 2021, 2026
+
 output "db_password" {
   value = var.db_password
 }
