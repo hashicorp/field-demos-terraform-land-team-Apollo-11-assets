@@ -1,3 +1,5 @@
+# Copyright IBM Corp. 2021, 2026
+
 resource "aws_security_group" "rds_access" {
   vpc_id      = var.vpc_id
 

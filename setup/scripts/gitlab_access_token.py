@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+# Copyright IBM Corp. 2021, 2026
+
 # Script modified from the original creator:
 # Author: https://github.com/vitalyisaev2
 # Repo: https://github.com/vitalyisaev2/gitlab_token

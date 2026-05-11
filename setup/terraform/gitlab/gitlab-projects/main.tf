@@ -1,3 +1,5 @@
+# Copyright IBM Corp. 2021, 2026
+
 //Gitlab Projects
 provider "gitlab" {
     base_url = "http://${var.GITLAB_PUBLIC_ADDRESS}/api/v4"

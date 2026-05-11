@@ -1,3 +1,5 @@
+# Copyright IBM Corp. 2021, 2026
+
 //TFC VCS
 resource "tfe_oauth_client" "test-oauth-client" {
    organization = var.TFC_ORGANIZATION

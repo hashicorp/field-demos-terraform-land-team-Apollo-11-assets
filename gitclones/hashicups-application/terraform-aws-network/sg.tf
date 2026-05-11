@@ -1,3 +1,5 @@
+# Copyright IBM Corp. 2021, 2026
+
 resource "aws_security_group" "security_group" {
   name        = "${var.name}-security-group"
   vpc_id      = module.vpc.vpc_id

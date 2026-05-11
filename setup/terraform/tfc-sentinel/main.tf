@@ -1,3 +1,5 @@
+# Copyright IBM Corp. 2021, 2026
+
 resource "tfe_policy_set" "pmr" {
   name          = "require-all-resources-from-pmr"
   description   = "Requires all non-root modules come from the private module registry and prevents creation of resources in the root module"

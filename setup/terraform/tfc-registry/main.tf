@@ -1,3 +1,5 @@
+# Copyright IBM Corp. 2021, 2026
+
 //PMR Modules
 resource "tfe_registry_module" "network-registry-module" {
   vcs_repo {

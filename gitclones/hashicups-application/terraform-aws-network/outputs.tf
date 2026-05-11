@@ -1,3 +1,5 @@
+# Copyright IBM Corp. 2021, 2026
+
 output "vpc_id" {
   value = module.vpc.vpc_id
 }
